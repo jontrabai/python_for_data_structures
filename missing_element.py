@@ -13,14 +13,14 @@ class TestFinder(object):
     def test(self, sol):
         """
         
-        :param sol: 
-        :return: 
+        :param sol: function to be tested
+        :return: if all pass return 1
         """
         assert_equal(sol([5, 5, 7, 7], [5, 7, 7]), 5)
         assert_equal(sol([1, 2, 3, 4, 5, 6, 7], [3, 7, 2, 1, 4, 6]), 5)
         assert_equal(sol([9, 8, 7, 6, 5, 4, 3, 2, 1],
                          [9, 8, 7, 5, 4, 3, 2, 1]), 6)
-        print("PASS")
+        return 1
 
 
 def finder(arr1, arr2):
@@ -37,4 +37,6 @@ def finder(arr1, arr2):
     return arr1[idx]
 
 t = TestFinder()
-t.test(finder)
+test_passed = t.test(finder)
+if t.test(finder):
+    print("PASS")
